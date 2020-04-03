@@ -1,5 +1,5 @@
 {
-  "name": "saka-nodejs-notes-app",
+  "name": "saka-nodejs-mongodb-notes-app",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
