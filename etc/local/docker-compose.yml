@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo:4.2.5
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: tivit123
+    ports:
+      - "27017:27017"
+    volumes:
+      - ~/data/mongoDB:/data/db
+    networks:
+      - mongo-compose-network
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: tivit123
+    links:
+      - mongo
+    networks:
+      - mongo-compose-network
+
+
+networks: 
+    mongo-compose-network:
+      driver: bridge
