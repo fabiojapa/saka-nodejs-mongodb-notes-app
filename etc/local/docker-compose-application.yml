@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo:4.2.5
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: tivit123
+    ports:
+      - "27017:27017"
+    volumes:
+      - ~/data/mongoDB:/data/db
+    networks:
+      - mongo-compose-network
+
+  saka-nodejs-mongodb-notes-app:
+    image: fabiojapa/saka-nodejs-mongodb-notes-app
+    restart: always
+    ports:
+      - 3000:3000
+    links:
+      - mongo
+    networks:
+      - mongo-compose-network
+
+networks: 
+    mongo-compose-network:
+      driver: bridge
