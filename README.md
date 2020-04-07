@@ -41,8 +41,9 @@
 
 
 ####Swagger (Open API)
-> Tests can be done in URI: http://saka-nodejs-mongodb-notes-app.herokuapp.com/api-docs/
+> API Docs can be accessed in URI: http://saka-nodejs-mongodb-notes-app.herokuapp.com/api-docs/
 
 
 ####Tests
 > Tests can be done in URI: http://saka-nodejs-mongodb-notes-app.herokuapp.com/api/v1/notes
+> See more in Swagger (Open API)
