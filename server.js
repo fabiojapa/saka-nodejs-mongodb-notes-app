@@ -1,9 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-// listen for requests
-const port = process.env.PORT || 3000;
-
 // create express app
 const app = express();
 
@@ -32,42 +29,15 @@ mongoose.connect(dbConfig.url, {
 
 // define a simple route
 app.get('/', (req, res) => {
-    res.json({"message": "Welcome to SakaNotes application. Organize your notes."});
+    res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
 });
 
 // Require Notes routes
 require('./app/routes/note.routes.js')(app);
 
-const expressSwagger = require('express-swagger-generator')(app);
-let options = {
-    swaggerDefinition: {
-        info: {
-            description: 'This is a SakaNotes server',
-            title: 'Swagger',
-            version: '1.0.0',
-        },
-        host: 'localhost:'+port,
-        basePath: '/',
-        produces: [
-            "application/json",
-            "application/xml"
-        ],
-        schemes: ['http', 'https'],
-        securityDefinitions: {
-            JWT: {
-                type: 'apiKey',
-                in: 'header',
-                name: 'Authorization',
-                description: "",
-            }
-        }
-    },
-    basedir: __dirname, //app absolute path
-    files: ['./app/routes/*.js'] //Path to the API handle folder
-};
-expressSwagger(options)
-
-
+// listen for requests
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log("Server is listening on port "+ port);
+    console.log(process.env.MONGODB_URI);
 });
