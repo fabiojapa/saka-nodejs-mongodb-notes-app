@@ -36,6 +36,7 @@ app.get('/', (req, res) => {
 require('./app/routes/note.routes.js')(app);
 
 // listen for requests
-app.listen(80, () => {
-    console.log("Server is listening on port 80");
+app.listen(5001, () => {
+    console.log("Server is listening on port 5001");
+    console.log(process.env.MONGODB_URI);
 });
