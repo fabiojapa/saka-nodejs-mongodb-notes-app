@@ -33,3 +33,6 @@
 
 ####MongoDB URL
 > mongodb://root:tivit123@mongo:27017/easy?authSource=admin
+
+####Tests
+> Tests can be done in URI: http://saka-nodejs-mongodb-notes-app.herokuapp.com/notes
