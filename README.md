@@ -36,7 +36,8 @@
 
 ####Heroku deploy
 > git push heroku master
-
+####Heroku logs
+> heroku logs --tail
 
 ####Tests
 > Tests can be done in URI: http://saka-nodejs-mongodb-notes-app.herokuapp.com/notes
