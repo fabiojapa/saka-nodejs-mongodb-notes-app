@@ -37,7 +37,8 @@ require('./app/routes/note.routes.js')(app);
 
 // listen for requests
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log("Server is listening on port "+ port);
-    console.log(process.env.MONGODB_URI);
 });
+
+module.exports = server;
