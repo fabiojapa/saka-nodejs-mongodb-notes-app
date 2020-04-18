@@ -28,7 +28,7 @@ describe('inicio dos testes', () => {
 
     });
 
-    test('acessa a rota /tdd e então será apresentada a seguinte defiição de tdd:', async () => {
+    test('acessa a rota /notes e então será apresentada a seguinte defiição de tdd:', async () => {
         const response = await request(server).get('/api/v1/notes');
         expect(response.status).toEqual(200);
         expect(response.text).toContain('\"title\":');
